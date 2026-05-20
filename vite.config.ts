@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',  // 使用相对路径，支持GitHub Pages
+  base: '/family-travel-plan/',  // 使用相对路径，支持GitHub Pages
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
