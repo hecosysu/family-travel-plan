@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F5F1ED;
+    --text-primary: #2C2C2C;
+    --accent: #D4A574;
+    --card-bg: #FAFAF8;
+    --border: #E8E8E8;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-[#D4A574] text-white rounded-lg font-medium transition-all duration-300 hover:bg-[#c49464] hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-[#2C2C2C] border border-[#E8E8E8] rounded-lg font-medium transition-all duration-300 hover:bg-[#FAFAF8] hover:shadow-md;
+  }
+
+  .card {
+    @apply bg-[#FAFAF8] rounded-xl border border-[#E8E8E8] overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .gradient-header {
+    @apply h-24 bg-gradient-to-r;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A574;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c49464;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
